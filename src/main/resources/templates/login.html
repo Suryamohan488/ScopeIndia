@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{assets/css/login.css}">
+</head>
+<body style=" background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/headerbackground.jpg) center center no-repeat;background-size: 100% 100%;">
+    <div class="login-container">
+       <a th:href="@{/home}"> <img src="img/scope-india-logo-bird.png" alt="Tech Logo"></a>
+        <h1>Login to your account</h1>
+        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+        <form th:action="@{/login}" method="post">
+            <input type="email"  id="email" name="email" placeholder="Enter Email" required>
+            <div style="position: relative;">
+        		<input type="password"  name="password" id="password" placeholder="Enter Password" required>
+        		<button type="button" onclick="togglePassword()" >
+            		<span id="toggle-icon">👁️</span>
+        		</button>
+    		</div>
+	    	<div>
+                <input type="checkbox" name="cookies" value="on">
+                <label for="cookies">Keep me logged in</label>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <p >Forgot your password? <a th:href="@{/send-otp}">Reset here</a></p>
+        <p class="register-link">If not registered, <a th:href="@{/register}">Register here</a></p>
+    </div>
+    
+    
+    <script>
+    function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const toggleIcon = document.getElementById("toggle-icon");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.textContent = "🙈"; // Change icon when visible
+        } else {
+            passwordField.type = "password";
+            toggleIcon.textContent = "👁️"; // Change back to eye icon when hidden
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+ body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 50px 30px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-container img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"],
+        .login-container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+        }
+
+        .login-container input[type="email"]:focus,
+        .login-container input[type="password"]:focus,
+        .login-container input[type="text"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .login-container input[type="submit"] {
+            width: 107%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-container input[type="submit"]:hover {
+            background-color: #2563eb;
+        }
+	.login-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .login-container p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .login-container a {
+            color: #4f83f1;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .login-container button {
+            position: absolute; 
+            right: 0px; top: 50%; 
+            transform: translateY(-50%); 
+            background: none; border: none; 
+            cursor: pointer;
+        }
